@@ -10,8 +10,6 @@ import {
   StyledLabel,
   StyledInputWrapper,
 } from "./styles"
-import { CounterProps } from "../../components/Counter/types"
-import { number } from "yup"
 
 function Homework_15() {
   const [count, setCount] = useState<number>(0)
@@ -27,7 +25,11 @@ function Homework_15() {
       <ButtonControl>
         <Button name="Button" />
       </ButtonControl>
-      <Counter count={count} onPlus={onPlus} onMinus={onMinus} />
+      <Counter count={count} onPlus={onPlus} onMinus={onMinus} onMultiply={function (): void {
+        throw new Error("Function not implemented.")
+      } } onDivide={function (): void {
+        throw new Error("Function not implemented.")
+      } } />
       <StyledInputWrapper>
         <StyledLabel>
           Label:
