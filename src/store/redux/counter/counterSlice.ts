@@ -20,15 +20,7 @@ export const counterSlice = createAppSlice({
     }),
     multiply: create.reducer(
       (state: CounterSliceState, action: PayloadAction<number>) => {
-<<<<<<< HEAD
-        // action - это обьект состояний из 2 св-в
-        // 1 - type- строка, тип экшена, по которому у нас вызывется reducer
-        // 2 - payload - это данные, которые вы хотите передать из компонента в reducer
-        console.log(action.payload)
-        state.count =  Number((state.count * action.payload).toFixed(2))
-=======
-        state.count *= action.payload
->>>>>>> 8113f9a9ca730643c7a3835cb39b326506344e5e
+                state.count =  Number((state.count * action.payload).toFixed(2))
       },
     ),
     divide: create.reducer(
