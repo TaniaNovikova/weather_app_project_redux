@@ -27,7 +27,7 @@ export const counterSlice = createAppSlice({
     }),
     multiply: create.reducer(
       (state: CounterSliceState, action: PayloadAction<number>) => {
-        // action - это обьект состоязий из 2 св-в
+        // action - это обьект состояний из 2 св-в
         // 1 - type- строка, тип экшена, по которому у нас вызывется reducer
         // 2 - payload - это данные, которые вы хотите передать из компонента в reducer
         console.log(action.payload)

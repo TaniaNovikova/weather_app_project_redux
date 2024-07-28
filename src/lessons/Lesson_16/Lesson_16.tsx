@@ -23,7 +23,7 @@ function Lesson_16() {
   const onMinus = () => {
     console.log(counterSliceActions.minus())
     // counterSliceActions.minus() - это actionCreator - функция, котрорая возвращает вам action
-    // action - это обьект состоязий из 2 св-в
+    // action - это объект, состоящий из 2 св-в
     // 1 - type- строка, тип экшена, по которому у нас вызывется reducer
     // 2 - payload - это данные, которые вы хотите передать из компонента в reducer
     dispatch(counterSliceActions.minus())
