@@ -66,7 +66,7 @@ function CreateEmployeeForm() {
     //   helpers.resetForm()
     //   goToEmployeesPage()
     // },
-    onSubmit: (values, helpers) => {gi
+    onSubmit: (values, helpers) => {
       dispatch(createEmployee(values))
       helpers.resetForm()
       setModalOpen(true)
