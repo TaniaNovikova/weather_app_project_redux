@@ -13,6 +13,8 @@ function Homework_16() {
   const likes = useSelector(feedbackSliceSelectors.selectLikes)
   const dislikes = useSelector(feedbackSliceSelectors.selectDislikes)
   const onLikes = () => {
+    console.log(feedbackSliceActions.addLikes);
+    
     dispatch(feedbackSliceActions.addLikes())
   }
   const onDislikes = () => {

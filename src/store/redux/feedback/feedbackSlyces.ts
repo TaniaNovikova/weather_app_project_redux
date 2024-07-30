@@ -1,4 +1,4 @@
-import {createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 import { FeedbackSliceState } from "./types"
 
 const feedbackInitialState: FeedbackSliceState = {
@@ -16,10 +16,9 @@ export const feedbackSlice = createSlice({
     addDislikes: create.reducer((state: FeedbackSliceState) => {
       state.dislikes += 1
     }),
-    resetResults: create.reducer((state: FeedbackSliceState) => {
-      state.likes = 0
-      state.dislikes = 0
-    }),
+    resetResults: create.reducer(() => feedbackInitialState),
+    // state.likes = 0
+    // state.dislikes = 0
   }),
   selectors: {
     selectLikes: (likes: FeedbackSliceState) => likes.likes,
