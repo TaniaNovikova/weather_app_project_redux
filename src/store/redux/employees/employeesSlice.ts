@@ -16,8 +16,7 @@ export const employeesSlice = createAppSlice({
   reducers: create => ({
     createEmployee: create.reducer(
       (state: EmployeesSliceState, action: PayloadAction<Employee>) => {
-        // action.payload.id = v4()
-        state.employees = [...state.employees, { ...action.payload, id: v4() }] //.push(action.payload)
+        state.employees = [...state.employees, { ...action.payload, id: v4() }]
       },
     ),
 
