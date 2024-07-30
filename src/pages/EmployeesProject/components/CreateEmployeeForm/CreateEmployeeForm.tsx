@@ -61,10 +61,15 @@ function CreateEmployeeForm() {
     validationSchema: validationSchema,
     validateOnChange: true,
 
-    onSubmit: (values, helpers) => {
+    // onSubmit: (values, helpers) => {
+    //   dispatch(createEmployee(values))
+    //   helpers.resetForm()
+    //   goToEmployeesPage()
+    // },
+    onSubmit: (values, helpers) => {gi
       dispatch(createEmployee(values))
       helpers.resetForm()
-      goToEmployeesPage()
+      setModalOpen(true)
     },
   })
 
