@@ -1,20 +1,18 @@
-import { InputProps } from "./types";
-import { StyledInput, InputWrapper, InputLabel, ErrorContainer } from "./styles";
+import { InputProps } from "./types"
+import { StyledInput, ErrorContainer } from "./styles"
 
 function Input({
   id,
   name,
   type = "text",
   placeholder,
-  label,
   disabled,
   error,
   value,
   onChange,
 }: InputProps) {
   return (
-    <InputWrapper>
-      <InputLabel htmlFor={id}>{label}</InputLabel>
+    <>
       <StyledInput
         disabled={disabled}
         id={id}
@@ -28,8 +26,8 @@ function Input({
         onChange={onChange}
       />
       {!!error && <ErrorContainer>{error}</ErrorContainer>}
-    </InputWrapper>
-  );
+    </>
+  )
 }
 
-export default Input;
+export default Input

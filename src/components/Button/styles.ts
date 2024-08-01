@@ -1,38 +1,53 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
-import { colors } from "styles/colors";
+import { colors } from "styles/colors"
 
 interface StyledButtonProps {
-  $isRed?: boolean;
+  $isTransparent?: boolean
 }
 
 const getButtonColor = (
   disbled: boolean | undefined,
-  isRed: boolean | undefined
+  $isTransparent: boolean | undefined,
 ) => {
-  if (disbled) {
-    return "grey";
-  } else if (isRed) {
-    return colors.ERROR;
+  if ($isTransparent) {
+    return colors.TRANSPARENT
+  } else if (disbled) {
+    return colors.DISABLED
   } else {
-    return colors.PRIMARY_BLUE;
+    return colors.BUTTON_BLUE
   }
-};
+}
+
+const getButtonBorder = ($isTransparent: boolean | undefined) => {
+  if ($isTransparent) {
+    return "1px solid white"
+  } else {
+    return "none"
+  }
+}
 
 export const StyledButton = styled("button")<StyledButtonProps>`
-  height: 70px;
+  height: 48px;
   width: 100%;
-  border: none;
-  border-radius: 4px;
+  border: ${({ $isTransparent }) => getButtonBorder($isTransparent)};
+  border-radius: 50px;
   font-size: 20px;
   color: white;
-  font-weight: bold;
-  background-color: ${({ disabled, $isRed }) =>
-    getButtonColor(disabled, $isRed)};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-`;
+  padding: 12px;
+
+  background-color: ${({ disabled, $isTransparent }) =>
+    getButtonColor(disabled, $isTransparent)};
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+  }
+`
 
 export const ButtonImg = styled("img")`
   width: 20px;
   height: 20px;
-`;
+`

@@ -2,10 +2,10 @@ import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 
-import { store } from "./store/store"
-import GlobalStyles from "styles/GlobalStyles"
-
 import App from "./App"
+import { store } from "./store/store"
+
+import GlobalStyles from "./styles/GlobalStyles"
 
 const container = document.getElementById("root")
 
@@ -14,8 +14,8 @@ if (container) {
 
   root.render(
     <Provider store={store}>
+      <GlobalStyles />
       <BrowserRouter>
-        <GlobalStyles />
         <App />
       </BrowserRouter>
     </Provider>,
